@@ -233,7 +233,7 @@ model = CHEXPERT_VAE().to(device)
 
 learning_rate = .001
 optimizer = torch.optim.Adam(model.parameters(), lr = learning_rate)
-epochs = 100
+epochs = 200
 
 
 
@@ -263,14 +263,14 @@ for t in range(epochs):
         #output the original image and the reconstructed image
         showImage(torchvision.utils.make_grid(images.to("cpu")), torchvision.utils.make_grid(recon_x.to("cpu")), t+1)
         #save model progress
-        print("Saving model progress...")
-        torch.save(model.state_dict(), "CHEXPERT_VAE_MODEL_TEST.pt")
+        #print("Saving model progress...")
+        #torch.save(model.state_dict(), "CHEXPERT_VAE_MODEL_TEST.pt")
     print("Done!")
     
     
  
 print("Saving model...")
-torch.save(model.state_dict(), "CHEXPERT_VAE_MODEL_TEST.pt")    
+torch.save(model.state_dict(), "CHEXPERT_VAE_MODEL_TEST_1.pt")    
 
 
 '''
